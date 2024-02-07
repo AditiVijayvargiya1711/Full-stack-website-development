@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title%}
+saved profile
+{% endblock title%}
+{% block body %}
+<div id="formate">
+    <div id="profile_form">
+        <div id="username">{{request.user.username}}</div>
+        <div id="info">YOUR SAVED DETAILS</div>
+        <div class="box">
+            <div id="name">NAME:</div>
+            <div id="name">{{name}}</div>
+        </div>
+        <div class="box">
+            <div>BIO:</div>
+            <div id="bio" >{{bio}}</div>
+        </div>
+        <div class="box">
+            <div>LOCATION:</div>
+            <div id="location">{{location}}</div>
+        </div>
+        <div class="box" id="socialaccounts">
+            <div>SOCIAL ACCOUNTS:</div>
+            <div class="socialaccount">{{socialaccount1}}</div>
+            <div class="socialaccount">{{socialaccount2}}</div>
+            <div class="socialaccount">{{socialaccount3}}</div>
+        </div>
+        <a id="anchor" href="/profile3/"><div id="submit">UPDATE PROFILE</div></a>
+    </div>
+</div>
+{% endblock body %}
+{%block style%}
+*{
+    box-sizing: border-box;
+}
+#formate{
+    background-image: url(/static/backgroundimage3.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#profile_form{
+    width:400px;
+    margin:50px;
+    padding: 50px;
+    background-color: black;
+    color: white;
+}
+#username{
+    margin-bottom:10px;
+    font-size:25px;
+    text-decoration:underline;
+}
+#info{
+    font-size: 20px;
+}
+.box{
+    font-size: 20px;
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+#anchor{
+    text-decoration:none;
+}
+#submit{
+    height: 30px;
+    width:150px;
+    font-weight: bolder;
+    background-color: orangered;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+@media(max-width:500px){
+    #profile_form{
+        margin:20px;
+        padding: 20px;
+    }
+}
+{%endblock style%}

@@ -1,0 +1,36 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>save details</title>
+    <link rel="stylesheet" href="{% static "profile1.css"%}">
+</head>
+<body>
+<div id="formate">
+    <form id="profile_form" method="POST" action="/saveprofile/">
+        {% csrf_token %}
+        <div id="info">SUBMIT YOUR DETAILS HERE</div>
+        <div id="username">{{request.user.username}}</div>
+        <div>
+            <label for="name">NAME:</label>
+            <input id="name" name="name" type="text">
+        </div>
+        <div>
+            <label for="bio">BIO:</label>
+            <input id="bio" name="bio" type="text">
+        </div>
+        <div>
+            <label for="location">LOCATION:</label>
+            <input id="location" name="location" type="text">
+        </div>
+        <div id="socialaccounts">
+            <label>SOCIAL ACCOUNTS:</label>
+            <input class="socialaccount" name="socialaccount1" type="text">
+            <input class="socialaccount" name="socialaccount2" type="text">
+            <input class="socialaccount" name="socialaccount3" type="text">
+        </div>
+        <button id="submit" type="submit">SUBMIT</button>
+    </form>
+</div>

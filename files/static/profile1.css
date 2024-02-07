@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+}
+#formate{
+    height: 750px;
+    background-image: url(/static/backgroundimage2.jpeg); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#profile_form{
+    width:600px;
+    height:700px;
+    padding:50px;
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#info{
+    font-size: 30px;
+    font-weight: bolder;
+}
+#username{
+    font-size: 25px;
+}
+input{
+    width:300px;
+    display:block;
+    background-color: black;
+    color:white;
+}
+#bio{
+    height: 100px;
+}
+#location{
+    height: 50px;
+}
+#socialaccounts{
+    height:120px;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+}
+.socialaccount{
+    width:500px;
+}
+#submit{
+    width:80px;
+    height: 30px;
+    font-weight: bolder;
+    background-color:orangered;
+    color:black;
+}
+@media(max-width:600px){
+    #formate{
+        font-size: 12px;
+    }
+    #profile_form{
+        height:600px;
+        width:80%;
+        padding: 5vw;
+    }
+    #info{
+        font-size: 15px;
+    }
+    input{
+        width:100%;
+    }
+    .socialaccount{
+        width:100%;
+    }
+    #username{
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block title%}
+update
+{% endblock title%}
+{% block body %}
+<div id="formate">
+    <form id="profile_form" method="POST" action="/updateprofile/">
+        {%csrf_token%}
+        <div id="info">SUBMIT YOUR DETAILS HERE</div>
+        <div id="username">{{request.user.username}}</div>
+        <div>
+            <label for="name">NAME:</label>
+            <input id="name" name="name" type="text">
+        </div>
+        <div>
+            <label for="bio">BIO:</label>
+            <input id="bio" name="bio" type="text">
+        </div>
+        <div>
+            <label for="location">LOCATION:</label>
+            <input id="location" name="location" type="text">
+        </div>
+        <div id="socialaccounts">
+            <label>SOCIAL ACCOUNTS:</label>
+            <input class="socialaccount" name="socialaccount1" type="text">
+            <input class="socialaccount" name="socialaccount2" type="text">
+            <input class="socialaccount" name="socialaccount3" type="text">
+        </div>
+        <button id="submit" type="submit">UPDATE</button>
+    </form>
+</div>
+{% endblock body %}
+{%block style%}
+*{
+    box-sizing: border-box;
+}
+#formate{
+    width:100vw;
+    height: 750px;
+    background-image: url(/static/backgroundimage2.jpeg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#profile_form{
+    width:600px;
+    height:700px;
+    padding:50px;
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#info{
+    font-size: 30px;
+    font-weight: bolder;
+}
+#profile_form div{
+    display: flex;
+    flex-direction: column;
+}
+#username{
+    font-size: 25px;
+}
+input{
+    width:300px;
+    background-color: black;
+    color:white;
+}
+#bio{
+    height: 100px;
+}
+#location{
+    height: 50px;
+}
+#socialaccounts{
+    height:120px;
+    justify-content: space-around;
+}
+.socialaccount{
+    width:500px;
+}
+#submit{
+    width:80px;
+    height: 30px;
+    font-weight: bolder;
+    background-color:orangered;
+    color:black;
+}
+@media(max-width:600px){
+    #formate{
+        width:100%;
+        font-size: 12px;
+    }
+    #profile_form{
+        width:80%;
+        padding: 5vw;
+    }
+    #info{
+        font-size: 15px;
+    }
+    input{
+        width:100%;
+    }
+    .socialaccount{
+        width:100%;
+    }
+    #username{
+        font-size: 15px;
+    }
+}
+{%endblock style%}

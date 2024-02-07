@@ -1,0 +1,44 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{%endblock title%}</title>
+    <link rel="stylesheet" href="{% static "base.css"%}">
+    <style>{%block style%}{%endblock style%}</style>
+</head>
+
+<body>
+    <div id="header1">
+        <div class="part_header1">
+            <div id="logo">FILES</div>
+            <a id="home" href="/">HOME</a>
+            <a id="upload" href="/upload">UPLOAD</a>
+        </div>
+        <div class="part_header1" id="part2_header1">
+            <a id="profile" href="/profile2">PROFILE</a>
+            <div id="log_out"><a href="/signin_login">LOG OUT</a></div>
+        </div>
+    </div>
+    <div id="header2">
+        <div id="logo">FILES</div>
+        <a id="home"href="/">HOME</a>
+        <a id="upload" href="/upload">UPLOAD</a>
+        <a id="profile" href="/profile2">PROFILE</a>
+        <div id="log_out"><a href="/signin_login">LOG OUT</a></div>
+    </div>
+    {% block body %}
+    {% endblock body%}
+    <div id="footer">
+        <div id="footer_logo">FILES</div>
+        <div id="footer_info">
+            <div id="contact_us">CONTACT US</div>
+            <div>PHONE: 99260XXXXX</div>
+            <div>E-MAIL: akvXXX@gmail.com</div>
+            <div>ADDRESS: Airport Road Shujalpur Mandi</div>
+        </div>
+    </div>
+</body>
+</html>
